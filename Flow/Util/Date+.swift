@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+extension Date {
+    enum DateType {
+        case hyphen
+        case hyphenWithTime
+    }
+
+    func dateFormatter(_ type: DateType) -> String {
+        let formatter = DateFormatter()
+
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = .autoupdatingCurrent
+        formatter.locale = Locale.current
+
+        switch type {
+        case .hyphen:
+            formatter.dateFormat = "yyyy-MM-dd"
+        case .hyphenWithTime:
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        }
+
+        return formatter.string(from: self)
+    }
+}

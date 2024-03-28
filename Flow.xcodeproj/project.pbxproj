@@ -22,6 +22,7 @@
 		EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C882BB1C81F00218940 /* ReminderStore.swift */; };
 		EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */; };
 		EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8C2BB1C84E00218940 /* ReminderError.swift */; };
+		EFF47C902BB5AE5200218940 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8F2BB5AE5200218940 /* Date+.swift */; };
 		F8ADFD158ACBF6E7E4A7511A /* Pods_FlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24117A5529A77B5CBD92115A /* Pods_FlowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		EFF47C882BB1C81F00218940 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 		EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
 		EFF47C8C2BB1C84E00218940 /* ReminderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderError.swift; sourceTree = "<group>"; };
+		EFF47C8F2BB5AE5200218940 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		EF2DD31C2BB1C2CA00329678 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				EFF47C8E2BB5AE4400218940 /* Util */,
 				EFF47C832BB1C5CF00218940 /* Errors */,
 				EFF47C822BB1C5C800218940 /* Models */,
 				EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */,
@@ -193,6 +196,14 @@
 				EFF47C8C2BB1C84E00218940 /* ReminderError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		EFF47C8E2BB5AE4400218940 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EFF47C8F2BB5AE5200218940 /* Date+.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +451,7 @@
 				EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */,
 				EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */,
 				EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */,
+				EFF47C902BB5AE5200218940 /* Date+.swift in Sources */,
 				EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

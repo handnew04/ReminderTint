@@ -20,13 +20,13 @@ final class ReminderStore {
         let status = EKEventStore.authorizationStatus(for: .reminder)
         switch status {
         case .authorized:
-            log.debug("authorized")
+            log.debug("reminder access : authorized")
             return
         case .restricted:
-            log.debug("restricted")
+            log.debug("reminder access : restricted")
             throw ReminderError.accessRestricted
         case .notDetermined:
-            log.debug("notDetermined")
+            log.debug("reminder access : notDetermined")
             let accessGranted = try await ekStore.requestAccess(to: .reminder)
             guard accessGranted else {
                 throw ReminderError.accessDenied
@@ -44,14 +44,13 @@ final class ReminderStore {
     }
 
     func readAll() async throws -> [Reminder] {
-        log.debug("readAll!")
+        log.debug("Read all Reminders...")
         guard isAvailable else {
             throw ReminderError.accessDenied
         }
 
         let predicate = ekStore.predicateForReminders(in: nil)
         let ekReminders = try await ekStore.reminders(matching: predicate)
-        log.debug("predicate: \(predicate), ekReminders: \(ekReminders)")
         let reminders: [Reminder] = try ekReminders.compactMap { ekReminder in
             do {
                 return try Reminder(with: ekReminder)
