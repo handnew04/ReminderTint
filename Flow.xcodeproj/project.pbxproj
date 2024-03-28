@@ -17,6 +17,11 @@
 		EF2DD3352BB1C2CC00329678 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3342BB1C2CC00329678 /* FlowTests.swift */; };
 		EF2DD33F2BB1C2CC00329678 /* FlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */; };
 		EF2DD3412BB1C2CC00329678 /* FlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */; };
+		EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C842BB1C5E200218940 /* Reminder.swift */; };
+		EFF47C872BB1C80C00218940 /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */; };
+		EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C882BB1C81F00218940 /* ReminderStore.swift */; };
+		EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */; };
+		EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8C2BB1C84E00218940 /* ReminderError.swift */; };
 		F8ADFD158ACBF6E7E4A7511A /* Pods_FlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24117A5529A77B5CBD92115A /* Pods_FlowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +64,11 @@
 		EF2DD33A2BB1C2CC00329678 /* FlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITests.swift; sourceTree = "<group>"; };
 		EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFF47C842BB1C5E200218940 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
+		EFF47C882BB1C81F00218940 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
+		EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
+		EFF47C8C2BB1C84E00218940 /* ReminderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +147,8 @@
 		EF2DD31C2BB1C2CA00329678 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				EFF47C832BB1C5CF00218940 /* Errors */,
+				EFF47C822BB1C5C800218940 /* Models */,
 				EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */,
 				EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */,
 				EF2DD3212BB1C2CA00329678 /* ViewController.swift */,
@@ -162,6 +174,25 @@
 				EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */,
 			);
 			path = FlowUITests;
+			sourceTree = "<group>";
+		};
+		EFF47C822BB1C5C800218940 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EFF47C842BB1C5E200218940 /* Reminder.swift */,
+				EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */,
+				EFF47C882BB1C81F00218940 /* ReminderStore.swift */,
+				EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EFF47C832BB1C5CF00218940 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				EFF47C8C2BB1C84E00218940 /* ReminderError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,7 +435,12 @@
 			files = (
 				EF2DD3222BB1C2CA00329678 /* ViewController.swift in Sources */,
 				EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */,
+				EFF47C872BB1C80C00218940 /* Reminder+EKReminder.swift in Sources */,
+				EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */,
+				EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */,
 				EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */,
+				EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */,
+				EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,8 +616,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 799L969K66;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flow/Info.plist;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -609,8 +647,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 799L969K66;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Flow/Info.plist;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

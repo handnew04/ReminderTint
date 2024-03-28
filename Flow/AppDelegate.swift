@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    override init() {
+        super.init()
+        initLog()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,5 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    private func initLog() {
+        let console = ConsoleDestination()
+        console.minLevel = .verbose
+        log.addDestination(console)
+      }
 }
 
