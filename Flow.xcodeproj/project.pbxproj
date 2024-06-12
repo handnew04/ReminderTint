@@ -11,18 +11,19 @@
 		EA9F334A48FB12FCF8730B9C /* Pods_Flow_FlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666146D9C81C38E1430B0365 /* Pods_Flow_FlowUITests.framework */; };
 		EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */; };
 		EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */; };
-		EF2DD3222BB1C2CA00329678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3212BB1C2CA00329678 /* ViewController.swift */; };
+		EF2DD3222BB1C2CA00329678 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3212BB1C2CA00329678 /* MainViewController.swift */; };
 		EF2DD3272BB1C2CC00329678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF2DD3262BB1C2CC00329678 /* Assets.xcassets */; };
 		EF2DD32A2BB1C2CC00329678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2DD3282BB1C2CC00329678 /* LaunchScreen.storyboard */; };
 		EF2DD3352BB1C2CC00329678 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3342BB1C2CC00329678 /* FlowTests.swift */; };
 		EF2DD33F2BB1C2CC00329678 /* FlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */; };
 		EF2DD3412BB1C2CC00329678 /* FlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */; };
+		EF537B7F2C1036B0008A9919 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B7E2C1036B0008A9919 /* Color+.swift */; };
 		EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C842BB1C5E200218940 /* Reminder.swift */; };
-		EFF47C872BB1C80C00218940 /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */; };
 		EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C882BB1C81F00218940 /* ReminderStore.swift */; };
 		EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */; };
 		EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8C2BB1C84E00218940 /* ReminderError.swift */; };
 		EFF47C902BB5AE5200218940 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8F2BB5AE5200218940 /* Date+.swift */; };
+		EFF47C922BB9AFE700218940 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C912BB9AFE700218940 /* MainViewModel.swift */; };
 		F8ADFD158ACBF6E7E4A7511A /* Pods_FlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24117A5529A77B5CBD92115A /* Pods_FlowTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,7 @@
 		EF2DD31A2BB1C2CA00329678 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF2DD3212BB1C2CA00329678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF2DD3212BB1C2CA00329678 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF2DD3262BB1C2CC00329678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2DD3292BB1C2CC00329678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF2DD32B2BB1C2CC00329678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,12 +66,13 @@
 		EF2DD33A2BB1C2CC00329678 /* FlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITests.swift; sourceTree = "<group>"; };
 		EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF537B7E2C1036B0008A9919 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		EFF47C842BB1C5E200218940 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
-		EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
 		EFF47C882BB1C81F00218940 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 		EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
 		EFF47C8C2BB1C84E00218940 /* ReminderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderError.swift; sourceTree = "<group>"; };
 		EFF47C8F2BB5AE5200218940 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		EFF47C912BB9AFE700218940 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,12 +151,12 @@
 		EF2DD31C2BB1C2CA00329678 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				EFF47C932BB9B15700218940 /* View */,
 				EFF47C8E2BB5AE4400218940 /* Util */,
 				EFF47C832BB1C5CF00218940 /* Errors */,
 				EFF47C822BB1C5C800218940 /* Models */,
 				EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */,
 				EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */,
-				EF2DD3212BB1C2CA00329678 /* ViewController.swift */,
 				EF2DD3262BB1C2CC00329678 /* Assets.xcassets */,
 				EF2DD3282BB1C2CC00329678 /* LaunchScreen.storyboard */,
 				EF2DD32B2BB1C2CC00329678 /* Info.plist */,
@@ -183,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				EFF47C842BB1C5E200218940 /* Reminder.swift */,
-				EFF47C862BB1C80C00218940 /* Reminder+EKReminder.swift */,
 				EFF47C882BB1C81F00218940 /* ReminderStore.swift */,
 				EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */,
 			);
@@ -202,8 +203,18 @@
 			isa = PBXGroup;
 			children = (
 				EFF47C8F2BB5AE5200218940 /* Date+.swift */,
+				EF537B7E2C1036B0008A9919 /* Color+.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		EFF47C932BB9B15700218940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DD3212BB1C2CA00329678 /* MainViewController.swift */,
+				EFF47C912BB9AFE700218940 /* MainViewModel.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,11 +455,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2DD3222BB1C2CA00329678 /* ViewController.swift in Sources */,
+				EF2DD3222BB1C2CA00329678 /* MainViewController.swift in Sources */,
+				EF537B7F2C1036B0008A9919 /* Color+.swift in Sources */,
 				EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */,
-				EFF47C872BB1C80C00218940 /* Reminder+EKReminder.swift in Sources */,
 				EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */,
 				EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */,
+				EFF47C922BB9AFE700218940 /* MainViewModel.swift in Sources */,
 				EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */,
 				EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */,
 				EFF47C902BB5AE5200218940 /* Date+.swift in Sources */,

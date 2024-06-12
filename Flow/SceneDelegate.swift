@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController() // ViewController 인스턴스 생성해서 추가
+        window.rootViewController = MainViewController()
         window.makeKeyAndVisible()
 
         self.window = window

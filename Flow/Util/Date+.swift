@@ -11,6 +11,7 @@ extension Date {
     enum DateType {
         case hyphen
         case hyphenWithTime
+        case time
     }
 
     func dateFormatter(_ type: DateType) -> String {
@@ -25,6 +26,8 @@ extension Date {
             formatter.dateFormat = "yyyy-MM-dd"
         case .hyphenWithTime:
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        case .time:
+            formatter.dateFormat = "HH:mm"
         }
 
         return formatter.string(from: self)

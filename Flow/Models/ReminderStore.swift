@@ -43,22 +43,23 @@ final class ReminderStore {
         }
     }
 
-    func readAll() async throws -> [Reminder] {
-        log.debug("Read all Reminders...")
-        guard isAvailable else {
-            throw ReminderError.accessDenied
-        }
-
-        let predicate = ekStore.predicateForReminders(in: nil)
-        let ekReminders = try await ekStore.reminders(matching: predicate)
-        let reminders: [Reminder] = try ekReminders.compactMap { ekReminder in
+    func fetchReminderLists() async throws -> [Reminder] {
+        guard isAvailable else { throw ReminderError.accessDenied }
+        let calendars = ekStore.calendars(for: .reminder)
+        var reminders: [Reminder] = []
+        log.debug("reminder list : :: : : : \(calendars)")
+        for calendar in calendars {
             do {
-                return try Reminder(with: ekReminder)
-            } catch ReminderError.reminderHasNoDueDate {
-                log.warning("reminderHasNoDueDate")
-                return nil
+                try reminders.append(Reminder(with: calendar))
+            } catch {
+                log.warning("FAIL : ekCalendar into Reminder")
             }
         }
         return reminders
     }
+    
+    func createReminderList() async throws {
+        //create.. 
+    }
+
 }

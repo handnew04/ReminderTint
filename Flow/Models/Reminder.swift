@@ -6,11 +6,26 @@
 //
 
 import Foundation
+import EventKit
+import UIKit
 
 struct Reminder {
     var id: String
     var title: String
-    var dueDate: Date? = nil
-    var notes: String? = nil
-    var isComplete: Bool = false
+    var type: Int?
+    var allowsModify: Bool
+    var color: UIColor?
+
+    var hexColor: String { self.color?.toHexString() ?? "unKnown Color" }
+}
+
+
+extension Reminder {
+    init(with ekCalendar: EKCalendar) throws {
+        id = ekCalendar.calendarIdentifier
+        title = ekCalendar.title
+        allowsModify = ekCalendar.allowsContentModifications
+        type = ekCalendar.type.rawValue
+        color = UIColor(cgColor: ekCalendar.cgColor)
+    }
 }
