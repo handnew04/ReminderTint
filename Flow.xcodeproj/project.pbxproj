@@ -18,6 +18,9 @@
 		EF2DD33F2BB1C2CC00329678 /* FlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */; };
 		EF2DD3412BB1C2CC00329678 /* FlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */; };
 		EF537B7F2C1036B0008A9919 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B7E2C1036B0008A9919 /* Color+.swift */; };
+		EF537B812C198B5C008A9919 /* ReminderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B802C198B5C008A9919 /* ReminderListCell.swift */; };
+		EF537B852C1C7C77008A9919 /* ReminderModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */; };
+		EF537B872C1C807A008A9919 /* ReminderModifyViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */; };
 		EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C842BB1C5E200218940 /* Reminder.swift */; };
 		EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C882BB1C81F00218940 /* ReminderStore.swift */; };
 		EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */; };
@@ -67,6 +70,9 @@
 		EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITests.swift; sourceTree = "<group>"; };
 		EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF537B7E2C1036B0008A9919 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		EF537B802C198B5C008A9919 /* ReminderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListCell.swift; sourceTree = "<group>"; };
+		EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewController.swift; sourceTree = "<group>"; };
+		EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewViewModel.swift; sourceTree = "<group>"; };
 		EFF47C842BB1C5E200218940 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		EFF47C882BB1C81F00218940 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 		EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
@@ -213,6 +219,9 @@
 			children = (
 				EF2DD3212BB1C2CA00329678 /* MainViewController.swift */,
 				EFF47C912BB9AFE700218940 /* MainViewModel.swift */,
+				EF537B802C198B5C008A9919 /* ReminderListCell.swift */,
+				EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */,
+				EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,11 +469,14 @@
 				EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */,
 				EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */,
 				EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */,
+				EF537B852C1C7C77008A9919 /* ReminderModifyViewController.swift in Sources */,
 				EFF47C922BB9AFE700218940 /* MainViewModel.swift in Sources */,
 				EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */,
+				EF537B872C1C807A008A9919 /* ReminderModifyViewViewModel.swift in Sources */,
 				EFF47C8D2BB1C84E00218940 /* ReminderError.swift in Sources */,
 				EFF47C902BB5AE5200218940 /* Date+.swift in Sources */,
 				EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */,
+				EF537B812C198B5C008A9919 /* ReminderListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
