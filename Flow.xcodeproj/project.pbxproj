@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		13A2E450FF3ECD656EAE561A /* Pods_Flow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FF4B7BD2674B7930ABB91A /* Pods_Flow.framework */; };
 		EA9F334A48FB12FCF8730B9C /* Pods_Flow_FlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666146D9C81C38E1430B0365 /* Pods_Flow_FlowUITests.framework */; };
+		EF1BBBFC2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BBBFB2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift */; };
+		EF1BBBFE2CF6159000C33704 /* ReminderStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BBBFD2CF6159000C33704 /* ReminderStoreError.swift */; };
+		EF1BBC002CF8211600C33704 /* AddReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1BBBFF2CF8211600C33704 /* AddReminderCell.swift */; };
 		EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */; };
 		EF2DD3202BB1C2CA00329678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */; };
 		EF2DD3222BB1C2CA00329678 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2DD3212BB1C2CA00329678 /* MainViewController.swift */; };
@@ -21,6 +24,7 @@
 		EF537B812C198B5C008A9919 /* ReminderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B802C198B5C008A9919 /* ReminderListCell.swift */; };
 		EF537B852C1C7C77008A9919 /* ReminderModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */; };
 		EF537B872C1C807A008A9919 /* ReminderModifyViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */; };
+		EF566FC62CE481A10057AD87 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF566FC52CE481980057AD87 /* UIView+.swift */; };
 		EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C842BB1C5E200218940 /* Reminder.swift */; };
 		EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C882BB1C81F00218940 /* ReminderStore.swift */; };
 		EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */; };
@@ -57,6 +61,9 @@
 		945BE484F30FB84647C52485 /* Pods-Flow-FlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flow-FlowUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flow-FlowUITests/Pods-Flow-FlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A808ECA3CE6291E3567DF62F /* Pods-FlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowTests.release.xcconfig"; path = "Target Support Files/Pods-FlowTests/Pods-FlowTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9FF4B7BD2674B7930ABB91A /* Pods_Flow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1BBBFB2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewControllerDelegate.swift; sourceTree = "<group>"; };
+		EF1BBBFD2CF6159000C33704 /* ReminderStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStoreError.swift; sourceTree = "<group>"; };
+		EF1BBBFF2CF8211600C33704 /* AddReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderCell.swift; sourceTree = "<group>"; };
 		EF2DD31A2BB1C2CA00329678 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		EF537B802C198B5C008A9919 /* ReminderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListCell.swift; sourceTree = "<group>"; };
 		EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewController.swift; sourceTree = "<group>"; };
 		EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewViewModel.swift; sourceTree = "<group>"; };
+		EF566FC52CE481980057AD87 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EFF47C842BB1C5E200218940 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		EFF47C882BB1C81F00218940 /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 		EFF47C8A2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
@@ -132,6 +140,64 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EF1BBBF02CEDD0CB00C33704 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */,
+				EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EF1BBBF12CEDD0D700C33704 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DD3282BB1C2CC00329678 /* LaunchScreen.storyboard */,
+				EF2DD3262BB1C2CC00329678 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EF1BBBF22CEDD0EE00C33704 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EFF47C832BB1C5CF00218940 /* Errors */,
+				EF1BBBF32CEDD10400C33704 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EF1BBBF32CEDD10400C33704 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF566FC52CE481980057AD87 /* UIView+.swift */,
+				EFF47C8F2BB5AE5200218940 /* Date+.swift */,
+				EF537B7E2C1036B0008A9919 /* Color+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF1BBBF42CEDD19400C33704 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EF2DD3212BB1C2CA00329678 /* MainViewController.swift */,
+				EFF47C912BB9AFE700218940 /* MainViewModel.swift */,
+				EF537B802C198B5C008A9919 /* ReminderListCell.swift */,
+				EF1BBBFF2CF8211600C33704 /* AddReminderCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EF1BBBF52CEDD19A00C33704 /* ReminderModify */ = {
+			isa = PBXGroup;
+			children = (
+				EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */,
+				EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */,
+				EF1BBBFB2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift */,
+			);
+			path = ReminderModify;
+			sourceTree = "<group>";
+		};
 		EF2DD3112BB1C2CA00329678 = {
 			isa = PBXGroup;
 			children = (
@@ -157,14 +223,11 @@
 		EF2DD31C2BB1C2CA00329678 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				EFF47C932BB9B15700218940 /* View */,
-				EFF47C8E2BB5AE4400218940 /* Util */,
-				EFF47C832BB1C5CF00218940 /* Errors */,
+				EF1BBBF02CEDD0CB00C33704 /* App */,
 				EFF47C822BB1C5C800218940 /* Models */,
-				EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */,
-				EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */,
-				EF2DD3262BB1C2CC00329678 /* Assets.xcassets */,
-				EF2DD3282BB1C2CC00329678 /* LaunchScreen.storyboard */,
+				EFF47C932BB9B15700218940 /* View */,
+				EF1BBBF22CEDD0EE00C33704 /* Common */,
+				EF1BBBF12CEDD0D700C33704 /* Resources */,
 				EF2DD32B2BB1C2CC00329678 /* Info.plist */,
 			);
 			path = Flow;
@@ -201,27 +264,16 @@
 			isa = PBXGroup;
 			children = (
 				EFF47C8C2BB1C84E00218940 /* ReminderError.swift */,
+				EF1BBBFD2CF6159000C33704 /* ReminderStoreError.swift */,
 			);
 			path = Errors;
-			sourceTree = "<group>";
-		};
-		EFF47C8E2BB5AE4400218940 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				EFF47C8F2BB5AE5200218940 /* Date+.swift */,
-				EF537B7E2C1036B0008A9919 /* Color+.swift */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		EFF47C932BB9B15700218940 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EF2DD3212BB1C2CA00329678 /* MainViewController.swift */,
-				EFF47C912BB9AFE700218940 /* MainViewModel.swift */,
-				EF537B802C198B5C008A9919 /* ReminderListCell.swift */,
-				EF537B842C1C7C77008A9919 /* ReminderModifyViewController.swift */,
-				EF537B862C1C807A008A9919 /* ReminderModifyViewViewModel.swift */,
+				EF1BBBF52CEDD19A00C33704 /* ReminderModify */,
+				EF1BBBF42CEDD19400C33704 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,7 +347,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					EF2DD3192BB1C2CA00329678 = {
 						CreatedOnToolsVersion = 15.1;
@@ -464,8 +516,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1BBBFE2CF6159000C33704 /* ReminderStoreError.swift in Sources */,
 				EF2DD3222BB1C2CA00329678 /* MainViewController.swift in Sources */,
 				EF537B7F2C1036B0008A9919 /* Color+.swift in Sources */,
+				EF1BBBFC2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift in Sources */,
+				EF566FC62CE481A10057AD87 /* UIView+.swift in Sources */,
 				EF2DD31E2BB1C2CA00329678 /* AppDelegate.swift in Sources */,
 				EFF47C892BB1C81F00218940 /* ReminderStore.swift in Sources */,
 				EFF47C8B2BB1C83A00218940 /* EKEventStore+AsyncFetch.swift in Sources */,
@@ -477,6 +532,7 @@
 				EFF47C902BB5AE5200218940 /* Date+.swift in Sources */,
 				EFF47C852BB1C5E200218940 /* Reminder.swift in Sources */,
 				EF537B812C198B5C008A9919 /* ReminderListCell.swift in Sources */,
+				EF1BBC002CF8211600C33704 /* AddReminderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,7 +765,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 42A29AB2FC5B6DD63E7D8032 /* Pods-FlowTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -730,7 +785,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A808ECA3CE6291E3567DF62F /* Pods-FlowTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -751,7 +805,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 945BE484F30FB84647C52485 /* Pods-Flow-FlowUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 799L969K66;
@@ -770,7 +823,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AB9A5FAFEFE542D81B3F848 /* Pods-Flow-FlowUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 799L969K66;
