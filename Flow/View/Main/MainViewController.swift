@@ -11,83 +11,114 @@ class MainViewController: UIViewController {
   private let viewModel = MainViewModel()
   private let tableView = UITableView()
 
+  private let collectionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    layout.minimumLineSpacing = 8
+
+    let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    collection.backgroundColor = .systemBackground
+    collection.register(ReminderListCell.self, forCellWithReuseIdentifier: "ReminderCell")
+    return collection
+  }()
+
+  private let addButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("Add Reminder List", for: .normal)
+    button.setTitleColor(.black, for: .normal)
+    var config = UIButton.Configuration.filled()
+    config.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 0, bottom: 14, trailing: 0)
+    config.background.cornerRadius = 12
+    config.background.backgroundColor = UIColor(hex: "F0F0F0")
+    button.configuration = config
+    return button
+  }()
+
+  private let titleView: UIView = {
+    let view = UIView()
+    let titleLabel = UILabel()
+    view.addSubview(titleLabel)
+    titleLabel.text = "Reminder List"
+    titleLabel.font = UIFont.monospacedSystemFont(ofSize: 20, weight: .bold)
+    titleLabel.textAlignment = .left
+
+    titleLabel.anchor(
+      leading: view.leadingAnchor,
+      trailing: view.trailingAnchor,
+      paddingLeading: 16,
+      paddingTrailing: 16
+    )
+    titleLabel.centerX(in: view)
+    titleLabel.centerY(in: view)
+    return view
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
     viewModel.prepareReminderStore()
-    setupTableView()
-    setupTitleView()
-    setupNavigation()
+    //setupTableView()
     bindViewModel()
+    setupUI()
+  }
+
+  private func setupUI() {
+    view.addSubview(collectionView)
+    view.addSubview(addButton)
+    view.addSubview(titleView)
+
+    setupTitleView()
+    setupAddButton()
+    setupCollectionView()
   }
 
   private func setupTitleView() {
-    let titleView = UIView()
-    view.addSubview(titleView)
-
     titleView.anchor(
       top: view.safeAreaLayoutGuide.topAnchor,
       leading: view.leadingAnchor,
       trailing: view.trailingAnchor,
       height: 60
     )
-
-    let titleLabel = UILabel()
-    titleLabel.text = "Reminder List"
-    titleLabel.font = UIFont.monospacedSystemFont(ofSize: 20, weight: .bold)
-    titleLabel.textAlignment = .left
-    titleView.addSubview(titleLabel)
-
-    titleLabel.anchor(
-      leading: titleView.leadingAnchor,
-      trailing: titleView.trailingAnchor,
-      paddingLeading: 16,
-      paddingTrailing: 16
-    )
-    titleLabel.centerX(in: titleView)
-    titleLabel.centerY(in: titleView)
   }
 
-  private func setupTableView() {
-    view.addSubview(tableView)
-
-    tableView.anchor(
+  private func setupCollectionView() {
+    collectionView.anchor(
       top: view.safeAreaLayoutGuide.topAnchor,
+      leading: view.leadingAnchor,
+      bottom: addButton.topAnchor,
+      trailing: view.trailingAnchor,
+      paddingTop: 60,
+      paddingLeading: 16,
+      paddingTrailing: 16,
+      paddingBottom: 10
+    )
+
+    collectionView.delegate = self
+    collectionView.dataSource = self
+  }
+
+  private func setupAddButton() {
+    addButton.anchor(
       leading: view.leadingAnchor,
       bottom: view.safeAreaLayoutGuide.bottomAnchor,
       trailing: view.trailingAnchor,
-      paddingTop: 60
-    )
+      paddingLeading: 16,
+      paddingTrailing: 16,
+      paddingBottom: 20)
 
-    tableView.layoutMargins = UIEdgeInsets.zero
-    tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-    tableView.contentInsetAdjustmentBehavior = .never
-    tableView.estimatedRowHeight = 90
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.separatorStyle = .none
-
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.register(ReminderListCell.self, forCellReuseIdentifier: "ReminderListCell")
-    tableView.register(AddReminderCell.self, forCellReuseIdentifier: "AddReminderCell")
-  }
-
-  private func setupNavigation() {
-    navigationItem.title = "Reminder Categories"
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminderList))
-    navigationItem.rightBarButtonItem = addButton
+    addButton.addTarget(self, action: #selector (addReminderList), for: .touchUpInside)
   }
 
   private func bindViewModel() {
     viewModel.reminders.bind { [weak self] _ in
       DispatchQueue.main.async {
-        self?.tableView.reloadData()
+        self?.collectionView.reloadData()
       }
     }
   }
 
   @objc private func addReminderList() {
-
+    showModifyViewController()
   }
 }
 
@@ -96,53 +127,6 @@ extension MainViewController: ReminderModifyViewControllerDelegate {
     Task {
       await viewModel.loadReminders()
     }
-  }
-}
-
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.reminders.value.count + 1
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == viewModel.reminders.value.count {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "AddReminderCell", for: indexPath) as! AddReminderCell
-      return cell
-    }
-
-
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderListCell", for: indexPath) as! ReminderListCell
-
-    cell.configure(with: viewModel.reminders.value[indexPath.row])
-    return cell
-  }
-
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.row == viewModel.reminders.value.count  {
-      showModifyViewController()
-    }
-    else {
-      let reminder = viewModel.reminders.value[indexPath.row]
-      showModifyViewController(for: reminder)
-    }
-  }
-
-  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-    let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completion) in
-
-      guard let self = self else {
-        completion(false)
-        return
-      }
-
-      showCancelAlert(for: indexPath.row, completion: completion)
-    }
-
-    deleteAction.backgroundColor = .systemRed
-
-    let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-    return configuration
   }
 
   func showModifyViewController(for reminder: Reminder? = nil) {
@@ -184,5 +168,44 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     })
 
     self.present(alert, animated: true)
+  }
+}
+
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return viewModel.reminders.value.count
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReminderCell", for: indexPath) as! ReminderListCell
+    cell.configure(with: viewModel.reminders.value[indexPath.row])
+    return cell
+  }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = collectionView.bounds.width
+    return CGSize(width: width, height: 50)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let reminder = viewModel.reminders.value[indexPath.row]
+    showModifyViewController(for: reminder)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+    guard let indexPath = indexPaths.first else { return nil }
+
+    return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+      let deleteAction = UIAction(
+        title: "Delete",
+        image: UIImage(systemName: "trash"),
+        attributes: .destructive
+      ) { [weak self] _ in
+        self?.showCancelAlert(for: indexPath.item) { _ in
+          self?.collectionView.deleteItems(at: indexPaths)
+        }
+      }
+      return UIMenu(title: "", children: [deleteAction])
+    }
   }
 }

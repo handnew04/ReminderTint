@@ -47,7 +47,7 @@ final class ReminderStore {
     guard isAvailable else { throw ReminderError.accessDenied }
     let calendars = ekStore.calendars(for: .reminder)
     var reminders: [Reminder] = []
-    log.debug("reminder list : :: : : : \(calendars)")
+    log.debug("reminder list :: \(calendars)")
     for calendar in calendars {
       do {
         try reminders.append(Reminder(with: calendar))
