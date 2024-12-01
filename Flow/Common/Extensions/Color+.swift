@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 extension UIColor {
-  convenience init?(hex: String) {
+  convenience init?(hex: String?) {
+    guard let hex else { return nil }
+
     let r, g, b, a: CGFloat
 
     var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -17,7 +19,7 @@ extension UIColor {
 
     var rgb: UInt64 = 0
 
-    var alphaValue: CGFloat = 1.0
+    //var alphaValue: CGFloat = 1.0
 
     guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { return nil }
 
@@ -29,12 +31,12 @@ extension UIColor {
       r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
       g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
       b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
-      alphaValue = CGFloat(rgb & 0x000000FF) / 255.0
+      //alphaValue = CGFloat(rgb & 0x000000FF) / 255.0
     } else {
       return nil
     }
 
-    self.init(red: r, green: g, blue: b, alpha: alphaValue)
+    self.init(red: r, green: g, blue: b, alpha: 1.0)
   }
 
 
