@@ -53,20 +53,18 @@ class ReminderModifyViewController: UIViewController {
     view.layer.masksToBounds = true
     view.backgroundColor = viewModel.color
 
+    titleTextField.delegate = self
+    colorCodeTextField.delegate = self
+
     setupUI()
+    setupViewModel()
   }
 
-  func dismiss(animated: Bool) {
-    guard let parentVC = parent else { return }
-    willMove(toParent: nil)
-
-    UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
-      self.view.alpha = 0
-      self.view.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-    }) { _ in
-      self.view.removeFromSuperview()
-      self.removeFromParent()
-      self.onDismiss?(self.hasChanges)
+  private func setupViewModel() {
+    viewModel.colorDidChange = { [weak self] color in
+      UIView.animate(withDuration: 0.3) {
+        self?.view.backgroundColor = color
+      }
     }
   }
 
@@ -89,12 +87,10 @@ class ReminderModifyViewController: UIViewController {
       paddingBottom: defaultPadding
     )
 
-    // 스택뷰에 뷰들 추가
     stackView.addArrangedSubview(titleTextField)
     stackView.addArrangedSubview(colorCodeTextField)
     stackView.addArrangedSubview(colorCollectionView)
 
-    // 추가 설정
     colorCollectionView.backgroundColor = .white
     colorCollectionView.backgroundColor?.withAlphaComponent(0.8)
     colorCollectionView.layer.cornerRadius = 25
@@ -123,13 +119,36 @@ class ReminderModifyViewController: UIViewController {
 
 extension ReminderModifyViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    self.view.endEditing(true)
+    textField.resignFirstResponder()
     return true
   }
 
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    return true
+
+    guard textField == colorCodeTextField else { return true }
+
+    let currentText = textField.text ?? ""
+
+    if string.isEmpty {
+        return true
+    }
+
+    if currentText.count >= 6 {
+      return false
+    }
+
+    // 16진수 문자만 허용
+    let allowedCharacters = CharacterSet(charactersIn: "0123456789ABCDEFabcdef")
+    let characterSet = CharacterSet(charactersIn: string)
+
+    return characterSet.isSubset(of: allowedCharacters)
   }
+
+  func textFieldDidChangeSelection(_ textField: UITextField) {
+    guard textField.text?.count == 6, let color = UIColor(hex: textField.text) else { return }
+    viewModel.color = color
+  }
+
 }
 
 extension ReminderModifyViewController {
@@ -141,7 +160,7 @@ extension ReminderModifyViewController {
 
   private func updateReminder() {
     guard let title = titleTextField.text, title != "" else { return }
-    guard let colorCode = colorCodeTextField.text, let color = UIColor(hex: colorCode) else { return }
+    guard let color = UIColor(hex: colorCodeTextField.text) else { return }
 
     viewModel.title = title
     viewModel.color = color

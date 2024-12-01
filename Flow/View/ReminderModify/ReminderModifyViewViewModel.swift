@@ -16,7 +16,12 @@ final class ReminderModifyViewViewModel {
 
   private let mode: Mode
   var title: String
-  var color: UIColor
+  var color: UIColor {
+    didSet {
+      colorDidChange?(color)
+    }
+  }
+  var colorDidChange: ((UIColor) -> Void)?
 
   init(mode: Mode) {
     self.mode = mode
