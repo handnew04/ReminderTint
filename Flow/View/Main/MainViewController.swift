@@ -144,7 +144,7 @@ extension MainViewController: ReminderModifyViewControllerDelegate {
     present(modifyVC, animated: true)
   }
 
-  func showCancelAlert(for index: Int, completion: @escaping (Bool) -> Void) {
+  func showDeleteAlert(for index: Int, completion: @escaping (Bool) -> Void) {
     let reminderToDelete = self.viewModel.reminders.value[index]
 
     let alert = UIAlertController(title: "Delete Reminder", message: "Are you sure you want to delete this reminder list?", preferredStyle: .alert)
@@ -201,8 +201,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         image: UIImage(systemName: "trash"),
         attributes: .destructive
       ) { [weak self] _ in
-        self?.showCancelAlert(for: indexPath.item) { _ in
-          self?.collectionView.deleteItems(at: indexPaths)
+        self?.showDeleteAlert(for: indexPath.item) { isDeleted in
+          if isDeleted { self?.collectionView.deleteItems(at: indexPaths) }
         }
       }
       return UIMenu(title: "", children: [deleteAction])

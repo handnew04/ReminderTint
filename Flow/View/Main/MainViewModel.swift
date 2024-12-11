@@ -39,7 +39,7 @@ final class MainViewModel {
         await loadReminders()
       } catch ReminderError.accessDenied, ReminderError.accessRestricted {
 #if DEBUG
-        //쒸익..
+        //앱 이용 불가
 #endif
       } catch {
         //showError
@@ -55,10 +55,6 @@ final class MainViewModel {
     } catch {
       print("Error fetching reminder list \(error)")
     }
-  }
-
-  func createReminderList() {
-    //이름, 컬러! 아이콘은 안보임 음....낄낄룩!
   }
 
   func deleteReminder(_ reminder: Reminder) async throws {

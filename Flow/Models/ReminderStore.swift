@@ -34,10 +34,11 @@ final class ReminderStore {
     case .denied:
       throw ReminderError.accessDenied
     case .fullAccess:
-      log.debug("requestAccess reminder... fullAccess... by iOS17")
+      log.debug("reminder access : fullAccess by iOS17")
       return
     case .writeOnly:
-      log.debug("requestAccess reminder... writeOnly... by iOS17")
+      log.debug("reminder access : writeOnly by iOS17")
+      return
     @unknown default:
       throw ReminderError.unknown
     }
