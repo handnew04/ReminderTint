@@ -64,16 +64,16 @@
 		EF1BBBFB2CF5FC7C00C33704 /* ReminderModifyViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModifyViewControllerDelegate.swift; sourceTree = "<group>"; };
 		EF1BBBFD2CF6159000C33704 /* ReminderStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStoreError.swift; sourceTree = "<group>"; };
 		EF1BBBFF2CF8211600C33704 /* AddReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderCell.swift; sourceTree = "<group>"; };
-		EF2DD31A2BB1C2CA00329678 /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2DD31A2BB1C2CA00329678 /* ReminderTint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReminderTint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD31D2BB1C2CA00329678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2DD31F2BB1C2CA00329678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF2DD3212BB1C2CA00329678 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF2DD3262BB1C2CC00329678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2DD3292BB1C2CC00329678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF2DD32B2BB1C2CC00329678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF2DD3302BB1C2CC00329678 /* FlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2DD3302BB1C2CC00329678 /* ReminderTintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderTintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD3342BB1C2CC00329678 /* FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
-		EF2DD33A2BB1C2CC00329678 /* FlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2DD33A2BB1C2CC00329678 /* ReminderTintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderTintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITests.swift; sourceTree = "<group>"; };
 		EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF537B7E2C1036B0008A9919 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
@@ -201,9 +201,9 @@
 		EF2DD3112BB1C2CA00329678 = {
 			isa = PBXGroup;
 			children = (
-				EF2DD31C2BB1C2CA00329678 /* Flow */,
-				EF2DD3332BB1C2CC00329678 /* FlowTests */,
-				EF2DD33D2BB1C2CC00329678 /* FlowUITests */,
+				EF2DD31C2BB1C2CA00329678 /* ReminderTint */,
+				EF2DD3332BB1C2CC00329678 /* ReminderTintTests */,
+				EF2DD33D2BB1C2CC00329678 /* ReminderTintUITests */,
 				EF2DD31B2BB1C2CA00329678 /* Products */,
 				702E3A256994BA6DD5BE233E /* Pods */,
 				A8CDA6741975BA17F5DDE8DA /* Frameworks */,
@@ -213,14 +213,14 @@
 		EF2DD31B2BB1C2CA00329678 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF2DD31A2BB1C2CA00329678 /* Flow.app */,
-				EF2DD3302BB1C2CC00329678 /* FlowTests.xctest */,
-				EF2DD33A2BB1C2CC00329678 /* FlowUITests.xctest */,
+				EF2DD31A2BB1C2CA00329678 /* ReminderTint.app */,
+				EF2DD3302BB1C2CC00329678 /* ReminderTintTests.xctest */,
+				EF2DD33A2BB1C2CC00329678 /* ReminderTintUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EF2DD31C2BB1C2CA00329678 /* Flow */ = {
+		EF2DD31C2BB1C2CA00329678 /* ReminderTint */ = {
 			isa = PBXGroup;
 			children = (
 				EF1BBBF02CEDD0CB00C33704 /* App */,
@@ -230,24 +230,24 @@
 				EF1BBBF12CEDD0D700C33704 /* Resources */,
 				EF2DD32B2BB1C2CC00329678 /* Info.plist */,
 			);
-			path = Flow;
+			path = ReminderTint;
 			sourceTree = "<group>";
 		};
-		EF2DD3332BB1C2CC00329678 /* FlowTests */ = {
+		EF2DD3332BB1C2CC00329678 /* ReminderTintTests */ = {
 			isa = PBXGroup;
 			children = (
 				EF2DD3342BB1C2CC00329678 /* FlowTests.swift */,
 			);
-			path = FlowTests;
+			path = ReminderTintTests;
 			sourceTree = "<group>";
 		};
-		EF2DD33D2BB1C2CC00329678 /* FlowUITests */ = {
+		EF2DD33D2BB1C2CC00329678 /* ReminderTintUITests */ = {
 			isa = PBXGroup;
 			children = (
 				EF2DD33E2BB1C2CC00329678 /* FlowUITests.swift */,
 				EF2DD3402BB1C2CC00329678 /* FlowUITestsLaunchTests.swift */,
 			);
-			path = FlowUITests;
+			path = ReminderTintUITests;
 			sourceTree = "<group>";
 		};
 		EFF47C822BB1C5C800218940 /* Models */ = {
@@ -281,9 +281,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF2DD3192BB1C2CA00329678 /* Flow */ = {
+		EF2DD3192BB1C2CA00329678 /* ReminderTint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF2DD3442BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "Flow" */;
+			buildConfigurationList = EF2DD3442BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTint" */;
 			buildPhases = (
 				0C9B4E7DB565E130D1939161 /* [CP] Check Pods Manifest.lock */,
 				EF2DD3162BB1C2CA00329678 /* Sources */,
@@ -295,14 +295,14 @@
 			);
 			dependencies = (
 			);
-			name = Flow;
+			name = ReminderTint;
 			productName = Flow;
-			productReference = EF2DD31A2BB1C2CA00329678 /* Flow.app */;
+			productReference = EF2DD31A2BB1C2CA00329678 /* ReminderTint.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EF2DD32F2BB1C2CC00329678 /* FlowTests */ = {
+		EF2DD32F2BB1C2CC00329678 /* ReminderTintTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF2DD3472BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "FlowTests" */;
+			buildConfigurationList = EF2DD3472BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTintTests" */;
 			buildPhases = (
 				9C1AA9EDF28A8B001E1727E8 /* [CP] Check Pods Manifest.lock */,
 				EF2DD32C2BB1C2CC00329678 /* Sources */,
@@ -314,14 +314,14 @@
 			dependencies = (
 				EF2DD3322BB1C2CC00329678 /* PBXTargetDependency */,
 			);
-			name = FlowTests;
+			name = ReminderTintTests;
 			productName = FlowTests;
-			productReference = EF2DD3302BB1C2CC00329678 /* FlowTests.xctest */;
+			productReference = EF2DD3302BB1C2CC00329678 /* ReminderTintTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EF2DD3392BB1C2CC00329678 /* FlowUITests */ = {
+		EF2DD3392BB1C2CC00329678 /* ReminderTintUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF2DD34A2BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "FlowUITests" */;
+			buildConfigurationList = EF2DD34A2BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTintUITests" */;
 			buildPhases = (
 				846B51BC29F4DF81AACDB7E1 /* [CP] Check Pods Manifest.lock */,
 				EF2DD3362BB1C2CC00329678 /* Sources */,
@@ -334,9 +334,9 @@
 			dependencies = (
 				EF2DD33C2BB1C2CC00329678 /* PBXTargetDependency */,
 			);
-			name = FlowUITests;
+			name = ReminderTintUITests;
 			productName = FlowUITests;
-			productReference = EF2DD33A2BB1C2CC00329678 /* FlowUITests.xctest */;
+			productReference = EF2DD33A2BB1C2CC00329678 /* ReminderTintUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +362,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EF2DD3152BB1C2CA00329678 /* Build configuration list for PBXProject "Flow" */;
+			buildConfigurationList = EF2DD3152BB1C2CA00329678 /* Build configuration list for PBXProject "ReminderTint" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -375,9 +375,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF2DD3192BB1C2CA00329678 /* Flow */,
-				EF2DD32F2BB1C2CC00329678 /* FlowTests */,
-				EF2DD3392BB1C2CC00329678 /* FlowUITests */,
+				EF2DD3192BB1C2CA00329678 /* ReminderTint */,
+				EF2DD32F2BB1C2CC00329678 /* ReminderTintTests */,
+				EF2DD3392BB1C2CC00329678 /* ReminderTintUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -558,12 +558,12 @@
 /* Begin PBXTargetDependency section */
 		EF2DD3322BB1C2CC00329678 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EF2DD3192BB1C2CA00329678 /* Flow */;
+			target = EF2DD3192BB1C2CA00329678 /* ReminderTint */;
 			targetProxy = EF2DD3312BB1C2CC00329678 /* PBXContainerItemProxy */;
 		};
 		EF2DD33C2BB1C2CC00329678 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EF2DD3192BB1C2CA00329678 /* Flow */;
+			target = EF2DD3192BB1C2CA00329678 /* ReminderTint */;
 			targetProxy = EF2DD33B2BB1C2CC00329678 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -710,7 +710,7 @@
 				DEVELOPMENT_TEAM = 799L969K66;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flow/Info.plist;
+				INFOPLIST_FILE = ReminderTint/Info.plist;
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -722,7 +722,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = handnew.Flow;
+				PRODUCT_BUNDLE_IDENTIFIER = handnew.ReminderTint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -741,7 +741,7 @@
 				DEVELOPMENT_TEAM = 799L969K66;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Flow/Info.plist;
+				INFOPLIST_FILE = ReminderTint/Info.plist;
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -753,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = handnew.Flow;
+				PRODUCT_BUNDLE_IDENTIFIER = handnew.ReminderTint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -777,7 +777,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Flow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReminderTint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReminderTint";
 			};
 			name = Debug;
 		};
@@ -797,7 +797,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Flow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReminderTint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReminderTint";
 			};
 			name = Release;
 		};
@@ -840,7 +840,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF2DD3152BB1C2CA00329678 /* Build configuration list for PBXProject "Flow" */ = {
+		EF2DD3152BB1C2CA00329678 /* Build configuration list for PBXProject "ReminderTint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF2DD3422BB1C2CC00329678 /* Debug */,
@@ -849,7 +849,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF2DD3442BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "Flow" */ = {
+		EF2DD3442BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF2DD3452BB1C2CC00329678 /* Debug */,
@@ -858,7 +858,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF2DD3472BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "FlowTests" */ = {
+		EF2DD3472BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTintTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF2DD3482BB1C2CC00329678 /* Debug */,
@@ -867,7 +867,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF2DD34A2BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "FlowUITests" */ = {
+		EF2DD34A2BB1C2CC00329678 /* Build configuration list for PBXNativeTarget "ReminderTintUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF2DD34B2BB1C2CC00329678 /* Debug */,
