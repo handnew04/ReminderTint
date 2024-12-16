@@ -132,9 +132,9 @@ class MainViewController: UIViewController {
   }
 
   private func showPermissionAlert() {
-    let alert = UIAlertController(title: "알림 접근 권한 필요", message: "앱을 사용하기 위해 미리 알림 접근 권한이 필요합니다.", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Permission Required", message: "Please allow access to reminders to use this feature", preferredStyle: .alert)
 
-    alert.addAction(UIAlertAction(title: "설정으로 이동", style: .default, handler: { _ in
+    alert.addAction(UIAlertAction(title: "Go to Settings", style: .default, handler: { _ in
       if let settingUrl = URL(string: UIApplication.openSettingsURLString) {
         UIApplication.shared.open(settingUrl)
       }
