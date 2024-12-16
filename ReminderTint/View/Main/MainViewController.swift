@@ -57,7 +57,6 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
     viewModel.prepareReminderStore()
-    //setupTableView()
     bindViewModel()
     setupUI()
   }
@@ -115,10 +114,41 @@ class MainViewController: UIViewController {
         self?.collectionView.reloadData()
       }
     }
+    viewModel.authrizationStatus.bind { [weak self] status in
+      self?.handleAuthorizationStatus(status)
+    }
+  }
+
+  private func handleAuthorizationStatus(_ status: MainViewModel.AuthorizationStatus) {
+    switch status {
+    case .authorized, .initial:
+      break
+    case .denied:
+      showPermissionAlert()
+      break
+    case .error(_):
+      break
+    }
+  }
+
+  private func showPermissionAlert() {
+    let alert = UIAlertController(title: "알림 접근 권한 필요", message: "앱을 사용하기 위해 미리 알림 접근 권한이 필요합니다.", preferredStyle: .alert)
+
+    alert.addAction(UIAlertAction(title: "설정으로 이동", style: .default, handler: { _ in
+      if let settingUrl = URL(string: UIApplication.openSettingsURLString) {
+        UIApplication.shared.open(settingUrl)
+      }
+    }))
+
+    present(alert, animated: true)
   }
 
   @objc private func addReminderList() {
-    showModifyViewController()
+    if case .authorized = viewModel.authrizationStatus.value {
+      showModifyViewController()
+    } else {
+      showPermissionAlert()
+    }
   }
 }
 

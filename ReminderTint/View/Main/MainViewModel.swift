@@ -30,6 +30,14 @@ class Observable<T> {
 final class MainViewModel {
   private var reminderStore: ReminderStore { ReminderStore.shared }
   var reminders: Observable<[Reminder]> = Observable([])
+  var authrizationStatus: Observable<AuthorizationStatus> = Observable(.initial)
+
+  enum AuthorizationStatus {
+    case initial
+    case authorized
+    case denied
+    case error(Error)
+  }
 
   func prepareReminderStore() {
     Task {
@@ -37,12 +45,17 @@ final class MainViewModel {
         log.debug("prepareReminderStore before requestAccess")
         try await reminderStore.requestAccess()
         await loadReminders()
+        await MainActor.run {
+          authrizationStatus.value = .authorized
+        }
       } catch ReminderError.accessDenied, ReminderError.accessRestricted {
-#if DEBUG
-        //앱 이용 불가
-#endif
+        await MainActor.run {
+          authrizationStatus.value = .denied
+        }
       } catch {
-        //showError
+        await MainActor.run {
+          authrizationStatus.value = .error(error)
+        }
       }
     }
   }

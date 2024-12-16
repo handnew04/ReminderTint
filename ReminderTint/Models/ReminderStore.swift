@@ -32,6 +32,7 @@ final class ReminderStore {
         throw ReminderError.accessDenied
       }
     case .denied:
+      log.debug("reminder access : denied")
       throw ReminderError.accessDenied
     case .fullAccess:
       log.debug("reminder access : fullAccess by iOS17")
@@ -46,6 +47,7 @@ final class ReminderStore {
 
   func fetchReminderLists() async throws -> [Reminder] {
     guard isAvailable else { throw ReminderError.accessDenied }
+
     let calendars = ekStore.calendars(for: .reminder)
     var reminders: [Reminder] = []
     log.debug("reminder list :: \(calendars)")
@@ -69,6 +71,7 @@ final class ReminderStore {
   }
 
   func createReminderList(title: String, color: CGColor) async throws -> Bool {
+    guard isAvailable else { throw ReminderError.accessDenied }
     let ekCalendar = EKCalendar(for: .reminder, eventStore: ekStore)
 
     ekCalendar.title = title
@@ -91,6 +94,8 @@ final class ReminderStore {
   }
 
   func updateReminderInfo(reminder: Reminder) async throws -> Bool {
+    guard isAvailable else { throw ReminderError.accessDenied }
+
     do {
       let ekCalendar = reminder.originalReminder
       ekCalendar.title = reminder.title
@@ -105,6 +110,8 @@ final class ReminderStore {
   }
 
   func deleteReminderList(reminder: Reminder) async throws -> Bool {
+    guard isAvailable else { throw ReminderError.accessDenied }
+
     do {
       let reminder = try await fetchReminderList(id: reminder.id)
       try ekStore.removeCalendar(reminder, commit: true)
