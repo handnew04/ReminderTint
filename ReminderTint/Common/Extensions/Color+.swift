@@ -53,7 +53,7 @@ extension UIColor {
     let alpha = components.count >= 4 ? components[3] : 1.0
 
     // 알파 값까지 포함하여 변환
-    return String(format: "%02X%02X%02X%02X", Int(r * 255.0), Int(g * 255.0), Int(b * 255.0), Int(alpha * 255.0))
+    return String(format: "%02X%02X%02X", Int(r * 255.0), Int(g * 255.0), Int(b * 255.0))
   }
 
   func random() -> UIColor {

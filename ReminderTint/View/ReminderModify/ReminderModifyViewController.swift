@@ -72,6 +72,7 @@ class ReminderModifyViewController: UIViewController {
       UIView.animate(withDuration: 0.3) {
         self?.view.backgroundColor = color
         self?.colorCodeTextField.text = color.toHexString()
+        self?.colorPicker.selectedColor = color
         self?.updateTextColor()
       }
     }
