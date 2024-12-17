@@ -166,7 +166,7 @@ extension MainViewController: ReminderModifyViewControllerDelegate {
 
     modifyVC.modalPresentationStyle = .pageSheet
     if let sheet = modifyVC.sheetPresentationController {
-      sheet.detents = [.medium()]
+      sheet.detents = [.large()]
       sheet.prefersGrabberVisible = true
     }
 

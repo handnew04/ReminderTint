@@ -36,11 +36,18 @@ class ReminderModifyViewController: UIViewController {
     return textField
   }()
 
+  private let colorPicker: UIColorWell = {
+    let colorWell = UIColorWell()
+    colorWell.supportsAlpha = false
+    return colorWell
+  }()
+
   init(viewModel: ReminderModifyViewViewModel) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
     titleTextField.text = viewModel.title
     colorCodeTextField.text = viewModel.color.toHexString()
+    colorPicker.selectedColor = viewModel.color
   }
 
   required init?(coder: NSCoder) {
@@ -64,6 +71,8 @@ class ReminderModifyViewController: UIViewController {
     viewModel.colorDidChange = { [weak self] color in
       UIView.animate(withDuration: 0.3) {
         self?.view.backgroundColor = color
+        self?.colorCodeTextField.text = color.toHexString()
+        self?.updateTextColor()
       }
     }
   }
@@ -79,28 +88,24 @@ class ReminderModifyViewController: UIViewController {
     stackView.anchor(
       top: view.safeAreaLayoutGuide.topAnchor,
       leading: view.leadingAnchor,
-      bottom: view.bottomAnchor,
       trailing: view.trailingAnchor,
       paddingTop: 80,
       paddingLeading: defaultPadding,
-      paddingTrailing: defaultPadding,
-      paddingBottom: defaultPadding
+      paddingTrailing: defaultPadding
     )
 
     stackView.addArrangedSubview(titleTextField)
     stackView.addArrangedSubview(colorCodeTextField)
-    stackView.addArrangedSubview(colorCollectionView)
+    stackView.addArrangedSubview(colorPicker)
 
-    colorCollectionView.backgroundColor = .white
-    colorCollectionView.backgroundColor?.withAlphaComponent(0.8)
-    colorCollectionView.layer.cornerRadius = 25
+    colorPicker.addTarget(self, action: #selector(colorChanged), for: .valueChanged)
 
     updateTextColor()
   }
 
-  private func configureColorPalette() {
-
-
+  @objc func colorChanged(_ sender: UIColorWell) {
+    guard let selectedColor = sender.selectedColor else { return }
+    viewModel.color = selectedColor
   }
 
   private func updateTextColor() {
