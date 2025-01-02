@@ -27,7 +27,7 @@ final class ReminderModifyViewViewModel {
     self.mode = mode
     switch mode {
     case .create:
-      self.title = "Title"
+      self.title = "Title".localized
       self.color = UIColor().random()
     case .modify(let reminder):
       self.title = reminder.title

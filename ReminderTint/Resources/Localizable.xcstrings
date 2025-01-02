@@ -1,0 +1,137 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A reminder has no due date" : {
+      "comment" : "reminder has no due date error description"
+    },
+    "Add Reminder List" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미리 알림 목록 추가"
+          }
+        }
+      }
+    },
+    "An unknown error occurred" : {
+      "comment" : "unknown error description"
+    },
+    "Are you sure you want to delete this reminder list?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 미리 알림 목록을 삭제할까요?"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "삭제"
+          }
+        }
+      }
+    },
+    "Delete Reminder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미리 알림 목록 삭제"
+          }
+        }
+      }
+    },
+    "Failed to read reminders" : {
+      "comment" : "failed reading reminders error description"
+    },
+    "Go to Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정으로 이동하기"
+          }
+        }
+      }
+    },
+    "NSRemindersUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your reminders can help you stay on track"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미리 알림 권한을 허용해 주세요"
+          }
+        }
+      }
+    },
+    "Permission Required" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "권한이 필요합니다"
+          }
+        }
+      }
+    },
+    "Please allow access to reminders to use this feature" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "미리 알림 접근 권한을 허용해 주세요"
+          }
+        }
+      }
+    },
+    "The app doesn't have permission to read reminders." : {
+      "comment" : "access denied error description"
+    },
+    "This device doesn't allow access to reminders." : {
+      "comment" : "access restricted error decription"
+    },
+    "Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "목록 이름"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

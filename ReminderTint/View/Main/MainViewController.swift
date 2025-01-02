@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
 
   private let addButton: UIButton = {
     let button = UIButton()
-    button.setTitle("Add Reminder List", for: .normal)
+    button.setTitle("Add Reminder List".localized, for: .normal)
     button.setTitleColor(.black, for: .normal)
     var config = UIButton.Configuration.filled()
     config.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 0, bottom: 14, trailing: 0)
@@ -120,9 +120,9 @@ class MainViewController: UIViewController {
   }
 
   private func showPermissionAlert() {
-    let alert = UIAlertController(title: "Permission Required", message: "Please allow access to reminders to use this feature", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Permission Required".localized, message: "Please allow access to reminders to use this feature".localized, preferredStyle: .alert)
 
-    alert.addAction(UIAlertAction(title: "Go to Settings", style: .default, handler: { _ in
+    alert.addAction(UIAlertAction(title: "Go to Settings".localized, style: .default, handler: { _ in
       if let settingUrl = URL(string: UIApplication.openSettingsURLString) {
         UIApplication.shared.open(settingUrl)
       }
@@ -165,13 +165,13 @@ extension MainViewController: ReminderModifyViewControllerDelegate {
   func showDeleteAlert(for index: Int, completion: @escaping (Bool) -> Void) {
     let reminderToDelete = self.viewModel.reminders.value[index]
 
-    let alert = UIAlertController(title: "Delete Reminder", message: "Are you sure you want to delete this reminder list?", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Delete Reminder".localized, message: "Are you sure you want to delete this reminder list?".localized, preferredStyle: .alert)
 
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+    alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel) { _ in
       completion(false)
     })
 
-    alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
+    alert.addAction(UIAlertAction(title: "Delete".localized, style: .destructive) { _ in
       Task {
         do {
           try await self.viewModel.deleteReminder(reminderToDelete)
@@ -215,7 +215,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
       let deleteAction = UIAction(
-        title: "Delete",
+        title: "Delete".localized,
         image: UIImage(systemName: "trash"),
         attributes: .destructive
       ) { [weak self] _ in
