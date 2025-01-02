@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ReminderListCell: UICollectionViewCell {
   let colorCircleView: UIView = {
@@ -39,22 +40,19 @@ class ReminderListCell: UICollectionViewCell {
     stackView.axis = .horizontal
     stackView.spacing = 12
     stackView.alignment = .center
-    stackView.anchor(
-      top: contentView.topAnchor,
-      leading: contentView.leadingAnchor,
-      bottom: contentView.bottomAnchor,
-      trailing: contentView.trailingAnchor,
-      paddingTop: 10,
-      paddingLeading: 16,
-      paddingTrailing: 16,
-      paddingBottom: 10
-    )
-    stackView.centerY(in: contentView)
+
+    stackView.snp.makeConstraints { make in
+      make.top.bottom.equalTo(contentView).inset(10)
+      make.leading.trailing.equalTo(contentView).inset(16)
+      make.centerY.equalTo(contentView)
+    }
 
     contentView.layer.cornerRadius = 12
     contentView.layer.masksToBounds = true
 
-    colorCircleView.anchor(width: 15, height: 15)
+    colorCircleView.snp.makeConstraints { make in
+      make.size.equalTo(15)
+    }
   }
 
   func configure(with reminder: Reminder) {

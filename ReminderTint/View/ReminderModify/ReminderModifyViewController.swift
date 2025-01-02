@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ReminderModifyViewController: UIViewController {
   weak var delegate: ReminderModifyViewControllerDelegate?
@@ -86,14 +87,10 @@ class ReminderModifyViewController: UIViewController {
     stackView.distribution = .fill
     view.addSubview(stackView)
 
-    stackView.anchor(
-      top: view.safeAreaLayoutGuide.topAnchor,
-      leading: view.leadingAnchor,
-      trailing: view.trailingAnchor,
-      paddingTop: 80,
-      paddingLeading: defaultPadding,
-      paddingTrailing: defaultPadding
-    )
+    stackView.snp.makeConstraints { make in
+      make.top.equalTo(view.safeAreaLayoutGuide).offset(80)
+      make.leading.trailing.equalToSuperview().inset(20)
+    }
 
     stackView.addArrangedSubview(titleTextField)
     stackView.addArrangedSubview(colorCodeTextField)

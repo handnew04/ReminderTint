@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class AddReminderCell: UITableViewCell {
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,11 +29,16 @@ class AddReminderCell: UITableViewCell {
     stackView.spacing = 8
     stackView.alignment = .center
 
-    circleImageView.anchor(width: 16, height: 16)
+    circleImageView.snp.makeConstraints { make in
+      make.size.equalTo(16)
+    }
 
     contentView.addSubview(stackView)
-    stackView.anchor(leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, paddingLeading: 16, paddingTrailing: 16)
-    stackView.centerY(in: contentView)
+
+    stackView.snp.makeConstraints { make in
+      make.leading.trailing.equalTo(contentView).inset(16)
+      make.centerY.equalTo(contentView)
+    }
   }
 
 }
