@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainViewController: UIViewController {
   private let viewModel = MainViewModel()
@@ -42,14 +43,10 @@ class MainViewController: UIViewController {
     titleLabel.font = UIFont.monospacedSystemFont(ofSize: 20, weight: .bold)
     titleLabel.textAlignment = .left
 
-    titleLabel.anchor(
-      leading: view.leadingAnchor,
-      trailing: view.trailingAnchor,
-      paddingLeading: 16,
-      paddingTrailing: 16
-    )
-    titleLabel.centerX(in: view)
-    titleLabel.centerY(in: view)
+    titleLabel.snp.makeConstraints { make in
+      make.leading.trailing.equalToSuperview().inset(16)
+      make.centerX.centerY.equalToSuperview()
+    }
     return view
   }()
 
@@ -72,38 +69,29 @@ class MainViewController: UIViewController {
   }
 
   private func setupTitleView() {
-    titleView.anchor(
-      top: view.safeAreaLayoutGuide.topAnchor,
-      leading: view.leadingAnchor,
-      trailing: view.trailingAnchor,
-      height: 60
-    )
+    titleView.snp.makeConstraints { make in
+      make.top.equalTo(view.safeAreaLayoutGuide)
+      make.leading.trailing.equalToSuperview()
+      make.height.equalTo(60)
+    }
   }
 
   private func setupCollectionView() {
-    collectionView.anchor(
-      top: view.safeAreaLayoutGuide.topAnchor,
-      leading: view.leadingAnchor,
-      bottom: addButton.topAnchor,
-      trailing: view.trailingAnchor,
-      paddingTop: 60,
-      paddingLeading: 16,
-      paddingTrailing: 16,
-      paddingBottom: 10
-    )
+    collectionView.snp.makeConstraints { make in
+      make.top.equalTo(view.safeAreaLayoutGuide).offset(60)
+      make.leading.trailing.equalToSuperview().inset(16)
+      make.bottom.equalTo(addButton.snp.top).offset(-10)
+    }
 
     collectionView.delegate = self
     collectionView.dataSource = self
   }
 
   private func setupAddButton() {
-    addButton.anchor(
-      leading: view.leadingAnchor,
-      bottom: view.safeAreaLayoutGuide.bottomAnchor,
-      trailing: view.trailingAnchor,
-      paddingLeading: 16,
-      paddingTrailing: 16,
-      paddingBottom: 20)
+    addButton.snp.makeConstraints { make in
+      make.leading.trailing.equalToSuperview().inset(16)
+      make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+    }
 
     addButton.addTarget(self, action: #selector (addReminderList), for: .touchUpInside)
   }
